@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { MantineProvider } from "@mantine/core";
+import { AppShell, MantineProvider } from "@mantine/core";
 import {
   Link,
   Outlet,
@@ -20,6 +20,16 @@ import { LocationDetail } from "./pages/LocationDetail";
 import { ItemCreator } from "./pages/ItemCreator";
 import { ItemDetail } from "./pages/ItemDetail";
 import { ItemViewer } from "./pages/ItemViewer";
+import { AppHeader } from "./components/organisms/AppHeader";
+import { AppFooter } from "./components/organisms/AppFooter";
+
+const links = [
+  { link: "/", label: "Home" },
+  { link: "/characters", label: "Characters" },
+  { link: "/locations", label: "Locations" },
+  { link: "/items", label: "Items" },
+  { link: "/scenes", label: "Scenes" },
+];
 
 const location = new ReactLocation();
 
@@ -65,8 +75,14 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       }}
     >
       <Router location={location} routes={routes}>
-        <Link to="/characters">Characters</Link>
-        <Outlet />
+        <AppShell
+          header={
+            <AppHeader links={links} location={location.current.pathname} />
+          }
+          footer={<AppFooter />}
+        >
+          <Outlet />
+        </AppShell>
       </Router>
     </MantineProvider>
   </React.StrictMode>
