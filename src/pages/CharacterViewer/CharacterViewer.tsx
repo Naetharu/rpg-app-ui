@@ -2,19 +2,20 @@ import { Box, Button, Grid, Table } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
 import React, { useEffect, useState } from "react";
 import { SnapshotCard } from "../../components/organisms/SnapshotCard";
+import { View } from "../../components/organisms/View";
 
 import { dummyCharacters } from "../../dummyData/characters";
 import { useLayoutChecker } from "../../hooks/useLayoutChecker";
 
 export const CharacterViewer = () => {
-  const [showTable, setShowTable] = useState(false);
+  const [showTable, setShowTable] = useState(true);
 
   // Custom hook that returns true iff screen width < props number.
   // 576 is the xs size for mantine breakpoint.
   const isMobileView = useLayoutChecker(576);
 
   return (
-    <>
+    <View>
       <Box sx={{ display: "flex", justifyContent: "center", margin: 20 }}>
         {!isMobileView && (
           <Button onClick={() => setShowTable(!showTable)}>Toggle View</Button>
@@ -47,7 +48,7 @@ export const CharacterViewer = () => {
             <tr>
               <th>Character Name</th>
               <th>Age</th>
-              <th>Locatiuon </th>
+              <th>Location </th>
               <th>Description</th>
             </tr>
           </thead>
@@ -63,7 +64,7 @@ export const CharacterViewer = () => {
           </tbody>
         </Table>
       )}
-    </>
+    </View>
   );
 };
 
