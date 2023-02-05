@@ -3,6 +3,10 @@ import { Link } from "@tanstack/react-location";
 import React from "react";
 
 const useStyles = createStyles((theme) => ({
+  link: {
+    textDecoration: "none",
+  },
+
   card: {
     background:
       theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
@@ -35,7 +39,7 @@ export const SnapshotCard = ({
   const { classes } = useStyles();
 
   return (
-    <Link to={`${id}`}>
+    <Link to={`${id}`} className={classes.link}>
       <Card className={classes.card} shadow="sm" p="lg" radius="md" withBorder>
         <Card.Section>
           <Image src={imageURL} alt={title} height={400} />
