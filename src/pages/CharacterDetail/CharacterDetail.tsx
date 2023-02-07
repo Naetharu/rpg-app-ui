@@ -10,6 +10,7 @@ import {
 } from "@mantine/core";
 import { useMatch } from "@tanstack/react-location";
 import React from "react";
+import { StatTable } from "../../components/organisms/StatTable";
 import { View } from "../../components/organisms/View";
 
 // TEMP DATA TO BE REPLACED BY API CALL
@@ -62,83 +63,27 @@ export const CharacterDetail = () => {
         Character Stats
       </Title>
       <Grid>
+        {/* TOP LEVEL STATS */}
+
         <Grid.Col xs={12} sm={4}>
-          <Title className={classes.titleMargin} order={4}>
-            Physical
-          </Title>
-          <Table
-            striped
-            highlightOnHover
-            verticalSpacing="xs"
-            withColumnBorders
-          >
-            <tbody>
-              <tr>
-                <td>Strength</td>
-                <td>{stats.physical.str}</td>
-              </tr>
-              <tr>
-                <td>Dexterity</td>
-                <td>{stats.physical.dex}</td>
-              </tr>
-              <tr>
-                <td>Stamina</td>
-                <td>{stats.physical.sta}</td>
-              </tr>
-            </tbody>
-          </Table>
+          <StatTable title={"Phyiscal"} stats={stats.physical} />
         </Grid.Col>
         <Grid.Col xs={12} sm={4}>
-          <Title className={classes.titleMargin} order={4}>
-            Mental
-          </Title>
-          <Table
-            striped
-            highlightOnHover
-            verticalSpacing="xs"
-            withColumnBorders
-          >
-            <tbody>
-              <tr>
-                <td>Intelligence</td>
-                <td>{stats.mental.int}</td>
-              </tr>
-              <tr>
-                <td>Wisdom</td>
-                <td>{stats.mental.wis}</td>
-              </tr>
-              <tr>
-                <td>Wits</td>
-                <td>{stats.mental.wit}</td>
-              </tr>
-            </tbody>
-          </Table>
+          <StatTable title={"Mental"} stats={stats.mental} />
         </Grid.Col>
         <Grid.Col xs={12} sm={4}>
-          <Title className={classes.titleMargin} order={4}>
-            Physical
-          </Title>
-          <Table
-            striped
-            highlightOnHover
-            verticalSpacing="xs"
-            withColumnBorders
-          >
-            <tbody>
-              <tr>
-                <td>Composure</td>
-                <td>{stats.social.com}</td>
-              </tr>
-              <tr>
-                <td>Manipulation</td>
-                <td>{stats.social.man}</td>
-              </tr>
-              <tr>
-                <td>Presence</td>
-                <td>{stats.social.pre}</td>
-              </tr>
-            </tbody>
-          </Table>
+          <StatTable title={"Social"} stats={stats.social} />
+        </Grid.Col>
+
+        {/* ABILITIES */}
+        <Grid.Col xs={12} sm={4}>
+          <StatTable title={"Physical Skills"} stats={stats.skillPhy} />
+        </Grid.Col>
+        <Grid.Col xs={12} sm={4}>
+          <StatTable title={"Mental Skills"} stats={stats.skillMen} />
+        </Grid.Col>
+        <Grid.Col xs={12} sm={4}>
+          <StatTable title={"Social Skills"} stats={stats.skillSoc} />
         </Grid.Col>
       </Grid>
     </View>
