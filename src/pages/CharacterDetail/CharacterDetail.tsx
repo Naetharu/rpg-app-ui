@@ -36,7 +36,8 @@ export const CharacterDetail = () => {
   const params = useMatch().params;
   const { classes } = useStyles();
 
-  const { stats } = dummyCharacters[Number(params.id)];
+  const { stats, contacts, equipiment, notes } =
+    dummyCharacters[Number(params.id)];
 
   return (
     <View>
@@ -85,6 +86,66 @@ export const CharacterDetail = () => {
         <Grid.Col xs={12} sm={4}>
           <StatTable title={"Social Skills"} stats={stats.skillSoc} />
         </Grid.Col>
+
+        {/* ADDITIONAL */}
+
+        <Grid.Col xs={12} sm={4}>
+          <StatTable title={"Merits"} stats={stats.merits} />
+        </Grid.Col>
+        <Grid.Col xs={12} sm={4}>
+          <StatTable title={"Flaws"} stats={stats.flaws} />
+        </Grid.Col>
+        <Grid.Col xs={12} sm={4}>
+          <StatTable title={"Aspects"} stats={stats.aspects} />
+        </Grid.Col>
+
+        {/* Conditions */}
+        <Grid.Col xs={12} sm={12}>
+          <StatTable title={"Conditions"} stats={stats.conditions} />
+        </Grid.Col>
+
+        {/* Contacts & Equipment - display if either contacts or equipment have members */}
+
+        {(contacts.length > 0 || equipiment.length > 0) && (
+          <>
+            <Grid.Col xs={12} sm={6}>
+              <Title className={classes.titleMargin} order={4}>
+                Equipment
+              </Title>
+              <ul>
+                {contacts.map((item) => (
+                  <li>{item.name}</li>
+                ))}
+              </ul>
+            </Grid.Col>
+            <Grid.Col xs={12} sm={6}>
+              <Title className={classes.titleMargin} order={4}>
+                Contacts
+              </Title>
+              <ul>
+                {contacts.map((contact) => (
+                  <li>{contact.name}</li>
+                ))}
+              </ul>
+            </Grid.Col>
+          </>
+        )}
+
+        {/* NOTES - display only if at least one note exists */}
+        {notes.length > 0 && (
+          <Grid.Col xs={12} sm={12}>
+            <Title className={classes.titleMargin} order={4}>
+              Notes
+            </Title>
+
+            {notes.map((note) => (
+              <>
+                <Title order={5}>{note.title}</Title>
+                <Text>{note.contents}</Text>
+              </>
+            ))}
+          </Grid.Col>
+        )}
       </Grid>
     </View>
   );

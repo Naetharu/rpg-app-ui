@@ -55,7 +55,41 @@ export const dummyCharacters = [
         { name: "Streetwise", stat: 3 },
         { name: "Subterfuge", stat: 2 },
       ],
+      merits: [
+        { name: "Brave", stat: 2 },
+        { name: "Curious", stat: 2 },
+      ],
+      flaws: [
+        { name: "Greedy", stat: 2 },
+        { name: "Jelous", stat: 2 },
+      ],
+      aspects: [
+        { name: "Placeholder", stat: 2 },
+        { name: "Placeholder", stat: 2 },
+      ],
+      conditions: [
+        { name: "Health", stat: 7 },
+        { name: "Willpower", stat: 6 },
+        { name: "Synthesis", stat: 4 },
+        { name: "Essence", stat: 6 },
+        { name: "Morality", stat: 7 },
+      ],
     },
+    contacts: [
+      { name: "Placeholder Name 1", id: "placeholder-id-1" },
+      { name: "Placeholder Name 2", id: "placeholder-id-2" },
+    ],
+    equipiment: [
+      { name: "Placeholder Equipment 1", id: "placeholder-id-1" },
+      { name: "Placeholder Equipment 2", id: "placeholder-id-2" },
+    ],
+    notes: [
+      {
+        timestamp: "001",
+        title: "Sample Note",
+        contents: "Some details about the character and their status.",
+      },
+    ],
   },
   {
     id: "1",
@@ -113,7 +147,41 @@ export const dummyCharacters = [
         { name: "Streetwise", stat: 3 },
         { name: "Subterfuge", stat: 2 },
       ],
+      merits: [
+        { name: "Brave", stat: 2 },
+        { name: "Curious", stat: 2 },
+      ],
+      flaws: [
+        { name: "Greedy", stat: 2 },
+        { name: "Jelous", stat: 2 },
+      ],
+      aspects: [
+        { name: "Placeholder", stat: 2 },
+        { name: "Placeholder", stat: 2 },
+      ],
+      conditions: [
+        { name: "Health", stat: 7 },
+        { name: "Willpower", stat: 6 },
+        { name: "Synthesis", stat: 4 },
+        { name: "Essence", stat: 6 },
+        { name: "Morality", stat: 7 },
+      ],
     },
+    contacts: [
+      { name: "Placeholder Name 1", id: "placeholder-id-1" },
+      { name: "Placeholder Name 2", id: "placeholder-id-2" },
+    ],
+    equipiment: [
+      { name: "Placeholder Equipment 1", id: "placeholder-id-1" },
+      { name: "Placeholder Equipment 2", id: "placeholder-id-2" },
+    ],
+    notes: [
+      {
+        timestamp: "001",
+        title: "Sample Note",
+        contents: "Some details about the character and their status.",
+      },
+    ],
   },
   {
     id: "2",
@@ -172,7 +240,41 @@ export const dummyCharacters = [
         { name: "Streetwise", stat: 3 },
         { name: "Subterfuge", stat: 2 },
       ],
+      merits: [
+        { name: "Brave", stat: 2 },
+        { name: "Curious", stat: 2 },
+      ],
+      flaws: [
+        { name: "Greedy", stat: 2 },
+        { name: "Jelous", stat: 2 },
+      ],
+      aspects: [
+        { name: "Placeholder", stat: 2 },
+        { name: "Placeholder", stat: 2 },
+      ],
+      conditions: [
+        { name: "Health", stat: 7 },
+        { name: "Willpower", stat: 6 },
+        { name: "Synthesis", stat: 4 },
+        { name: "Essence", stat: 6 },
+        { name: "Morality", stat: 7 },
+      ],
     },
+    contacts: [
+      { name: "Placeholder Name 1", id: "placeholder-id-1" },
+      { name: "Placeholder Name 2", id: "placeholder-id-2" },
+    ],
+    equipiment: [
+      { name: "Placeholder Equipment 1", id: "placeholder-id-1" },
+      { name: "Placeholder Equipment 2", id: "placeholder-id-2" },
+    ],
+    notes: [
+      {
+        timestamp: "001",
+        title: "Sample Note",
+        contents: "Some details about the character and their status.",
+      },
+    ],
   },
   {
     id: "3",
@@ -231,6 +333,40 @@ export const dummyCharacters = [
         { name: "Streetwise", stat: 3 },
         { name: "Subterfuge", stat: 2 },
       ],
+      merits: [
+        { name: "Brave", stat: 2 },
+        { name: "Curious", stat: 2 },
+      ],
+      flaws: [
+        { name: "Greedy", stat: 2 },
+        { name: "Jelous", stat: 2 },
+      ],
+      aspects: [
+        { name: "Placeholder", stat: 2 },
+        { name: "Placeholder", stat: 2 },
+      ],
+      conditions: [
+        { name: "Health", stat: 7 },
+        { name: "Willpower", stat: 6 },
+        { name: "Synthesis", stat: 4 },
+        { name: "Essence", stat: 6 },
+        { name: "Morality", stat: 7 },
+      ],
     },
+    contacts: [
+      { name: "Placeholder Name 1", id: "placeholder-id-1" },
+      { name: "Placeholder Name 2", id: "placeholder-id-2" },
+    ],
+    equipiment: [
+      { name: "Placeholder Equipment 1", id: "placeholder-id-1" },
+      { name: "Placeholder Equipment 2", id: "placeholder-id-2" },
+    ],
+    notes: [
+      // {
+      //   timestamp: "001",
+      //   title: "Sample Note",
+      //   contents: "Some details about the character and their status.",
+      // },
+    ],
   },
 ];
