@@ -188,7 +188,7 @@ export const dummyCharacters = [
     name: "Candy LeRoux",
     age: "21",
     location: "Colchester",
-    profession: "Stripper",
+    profession: "Dancer",
     species: "Human",
     imageURL:
       "https://i.pinimg.com/originals/66/58/71/665871363fd206438c91e5d7e39c7b89.jpg",

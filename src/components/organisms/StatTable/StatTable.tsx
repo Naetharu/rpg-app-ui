@@ -30,7 +30,7 @@ export const StatTable = ({ title, stats }: StatTableProps) => {
       <Table striped highlightOnHover verticalSpacing="xs" withColumnBorders>
         <tbody>
           {stats.map((stat) => (
-            <tr>
+            <tr key={stat.name}>
               <td className={classes.wideCol}>{stat.name}</td>
               <td>{stat.stat}</td>
             </tr>
