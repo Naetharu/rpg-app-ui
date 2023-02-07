@@ -114,7 +114,7 @@ export const CharacterDetail = () => {
               </Title>
               <ul>
                 {contacts.map((item) => (
-                  <li>{item.name}</li>
+                  <li key={item.id}>{item.name}</li>
                 ))}
               </ul>
             </Grid.Col>
@@ -124,7 +124,7 @@ export const CharacterDetail = () => {
               </Title>
               <ul>
                 {contacts.map((contact) => (
-                  <li>{contact.name}</li>
+                  <li key={contact.name}>{contact.name}</li>
                 ))}
               </ul>
             </Grid.Col>
@@ -139,10 +139,10 @@ export const CharacterDetail = () => {
             </Title>
 
             {notes.map((note) => (
-              <>
+              <React.Fragment key={note.title}>
                 <Title order={5}>{note.title}</Title>
                 <Text>{note.contents}</Text>
-              </>
+              </React.Fragment>
             ))}
           </Grid.Col>
         )}

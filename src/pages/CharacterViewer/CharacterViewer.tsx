@@ -24,7 +24,7 @@ export const CharacterViewer = () => {
       {showTable || isMobileView ? (
         <Grid gutter={40}>
           {dummyCharacters.map((character) => (
-            <Grid.Col xs={12} sm={6} lg={3}>
+            <Grid.Col xs={12} sm={6} lg={3} key={character.id}>
               <Box>
                 <SnapshotCard
                   imageURL={character.imageURL}
