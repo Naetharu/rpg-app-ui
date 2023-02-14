@@ -156,8 +156,8 @@ export const dummyCharacters = [
         { name: "Jelous", stat: 2 },
       ],
       aspects: [
-        { name: "Placeholder", stat: 2 },
-        { name: "Placeholder", stat: 2 },
+        { name: "Placeholder aspect 1", stat: 2 },
+        { name: "Placeholder aspect 2", stat: 2 },
       ],
       conditions: [
         { name: "Health", stat: 7 },
@@ -249,8 +249,8 @@ export const dummyCharacters = [
         { name: "Jelous", stat: 2 },
       ],
       aspects: [
-        { name: "Placeholder", stat: 2 },
-        { name: "Placeholder", stat: 2 },
+        { name: "Placeholder aspect 1", stat: 2 },
+        { name: "Placeholder aspect 2", stat: 2 },
       ],
       conditions: [
         { name: "Health", stat: 7 },
@@ -342,8 +342,8 @@ export const dummyCharacters = [
         { name: "Jelous", stat: 2 },
       ],
       aspects: [
-        { name: "Placeholder", stat: 2 },
-        { name: "Placeholder", stat: 2 },
+        { name: "Placeholder aspect 1", stat: 2 },
+        { name: "Placeholder aspect 2", stat: 2 },
       ],
       conditions: [
         { name: "Health", stat: 7 },

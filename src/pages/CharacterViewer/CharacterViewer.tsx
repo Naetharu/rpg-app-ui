@@ -1,5 +1,6 @@
 import { Box, Button, Grid, Table } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
+import { Link } from "@tanstack/react-location";
 import React, { useEffect, useState } from "react";
 import { SnapshotCard } from "../../components/organisms/SnapshotCard";
 import { View } from "../../components/organisms/View";
@@ -20,6 +21,7 @@ export const CharacterViewer = () => {
         {!isMobileView && (
           <Button onClick={() => setShowTable(!showTable)}>Toggle View</Button>
         )}
+        <Link to="create">Create</Link>
       </Box>
       {showTable || isMobileView ? (
         <Grid gutter={40}>

@@ -29,6 +29,11 @@ const links = [
   { link: "/locations", label: "Locations" },
   { link: "/items", label: "Items" },
   { link: "/scenes", label: "Scenes" },
+  { link: "/chapters", label: "Chapters" },
+  { link: "/campaigns", label: "Campaigns" },
+  { link: "/whiteboard", label: "Whiteboard" },
+  { link: "/art", label: "Art" },
+  { link: "/ideas", label: "Ideas" },
 ];
 
 const location = new ReactLocation();

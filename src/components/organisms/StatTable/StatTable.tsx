@@ -20,8 +20,6 @@ interface StatTableProps {
 export const StatTable = ({ title, stats }: StatTableProps) => {
   const { classes } = useStyles();
 
-  console.log(stats);
-
   return (
     <>
       <Title order={4} className={classes.titleMargin}>
