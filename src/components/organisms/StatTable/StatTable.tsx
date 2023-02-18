@@ -1,5 +1,6 @@
 import { createStyles, Table, Title } from "@mantine/core";
 import React from "react";
+import { Statbox } from "../../atoms/Statbox";
 
 const useStyles = createStyles((theme) => ({
   titleMargin: {
@@ -15,9 +16,10 @@ const useStyles = createStyles((theme) => ({
 interface StatTableProps {
   title: string;
   stats: { name: string; stat: number }[];
+  showNumbers?: boolean;
 }
 
-export const StatTable = ({ title, stats }: StatTableProps) => {
+export const StatTable = ({ title, stats, showNumbers }: StatTableProps) => {
   const { classes } = useStyles();
 
   return (
@@ -29,8 +31,11 @@ export const StatTable = ({ title, stats }: StatTableProps) => {
         <tbody>
           {stats.map((stat) => (
             <tr key={stat.name}>
-              <td className={classes.wideCol}>{stat.name}</td>
-              <td>{stat.stat}</td>
+              <Statbox
+                showNumbers={showNumbers ? showNumbers : true}
+                statName={stat.name}
+                statValue={stat.stat}
+              />
             </tr>
           ))}
         </tbody>
