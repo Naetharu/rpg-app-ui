@@ -2,11 +2,11 @@ import { Box, Button, Grid, Table } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
 import { Link } from "@tanstack/react-location";
 import React, { useEffect, useState } from "react";
-import { SnapshotCard } from "../../components/organisms/SnapshotCard";
-import { View } from "../../components/organisms/View";
+import { SnapshotCard } from "../../../components/organisms/SnapshotCard";
+import { View } from "../../../components/organisms/View";
 
-import { dummyCharacters } from "../../dummyData/characters";
-import { useLayoutChecker } from "../../hooks/useLayoutChecker";
+import { dummyCharacters } from "../../../dummyData/characters";
+import { useLayoutChecker } from "../../../hooks/useLayoutChecker";
 
 export const CharacterViewer = () => {
   const [showTable, setShowTable] = useState(true);

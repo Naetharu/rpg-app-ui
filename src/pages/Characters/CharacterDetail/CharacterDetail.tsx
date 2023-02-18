@@ -10,11 +10,12 @@ import {
 } from "@mantine/core";
 import { useMatch } from "@tanstack/react-location";
 import React from "react";
-import { StatTable } from "../../components/organisms/StatTable";
-import { View } from "../../components/organisms/View";
+import { Statbox } from "../../../components/atoms/Statbox";
+import { StatTable } from "../../../components/organisms/StatTable";
+import { View } from "../../../components/organisms/View";
 
 // TEMP DATA TO BE REPLACED BY API CALL
-import { dummyCharacters } from "../../dummyData/characters";
+import { dummyCharacters } from "../../../dummyData/characters";
 
 const useStyles = createStyles((theme) => ({
   characterImage: {
@@ -66,9 +67,12 @@ export const CharacterDetail = () => {
       <Grid>
         {/* TOP LEVEL STATS */}
 
-        <Grid.Col xs={12} sm={4}>
-          <StatTable title={"Phyiscal"} stats={stats.physical} />
-        </Grid.Col>
+        {Object.entries(stats).map(([category, items]) => (
+          <Grid.Col xs={12} sm={4}>
+            <Box>{category}</Box>
+          </Grid.Col>
+        ))}
+
         <Grid.Col xs={12} sm={4}>
           <StatTable title={"Mental"} stats={stats.mental} />
         </Grid.Col>

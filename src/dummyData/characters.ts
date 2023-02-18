@@ -370,3 +370,24 @@ export const dummyCharacters = [
     ],
   },
 ];
+
+export const dummyCampaigns = [
+  {
+    name: "Shadows of the City",
+  },
+  {
+    name: "Bloodlines of the Damned",
+  },
+  {
+    name: "Hunting the Hunters",
+  },
+  {
+    name: "Lost in the Underworld",
+  },
+  {
+    name: "Darkness Rising",
+  },
+  {
+    name: "Trials of the Kindred",
+  },
+];

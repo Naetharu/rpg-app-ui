@@ -11,17 +11,19 @@ import {
 } from "@tanstack/react-location";
 
 import { Dashboard } from "./pages/Dashboard";
-import { CharacterViewer } from "./pages/CharacterViewer";
-import { CharacterDetail } from "./pages/CharacterDetail";
-import { LocationViewer } from "./pages/LocationViewer";
-import { CharacterCreator } from "./pages/CharacterCreator";
-import { LocationCreator } from "./pages/LocationCreator";
-import { LocationDetail } from "./pages/LocationDetail";
-import { ItemCreator } from "./pages/ItemCreator";
-import { ItemDetail } from "./pages/ItemDetail";
-import { ItemViewer } from "./pages/ItemViewer";
+import { CharacterViewer } from "./pages/Characters/CharacterViewer";
+import { CharacterDetail } from "./pages/Characters/CharacterDetail";
+import { LocationViewer } from "./pages/Locations/LocationViewer";
+import { CharacterCreator } from "./pages/Characters/CharacterCreator";
+import { LocationCreator } from "./pages/Locations/LocationCreator";
+import { LocationDetail } from "./pages/Locations/LocationDetail";
+import { ItemCreator } from "./pages/Items/ItemCreator";
+import { ItemDetail } from "./pages/Items/ItemDetail";
+import { ItemViewer } from "./pages/Items/ItemViewer";
 import { AppHeader } from "./components/organisms/AppHeader";
 import { AppFooter } from "./components/organisms/AppFooter";
+import { Campaigns } from "./pages/Campaign/Campaigns";
+import { CampaignDetail } from "./pages/Campaign/CampaignDetail";
 
 const links = [
   { link: "/", label: "Home" },
@@ -65,6 +67,13 @@ const routes: Route[] = [
       { path: "/", element: <ItemViewer /> },
       { path: "create", element: <ItemCreator /> },
       { path: ":id", element: <ItemDetail /> },
+    ],
+  },
+  {
+    path: "campaigns",
+    children: [
+      { path: "/", element: <Campaigns /> },
+      { path: "id", element: <CampaignDetail /> },
     ],
   },
 ];
