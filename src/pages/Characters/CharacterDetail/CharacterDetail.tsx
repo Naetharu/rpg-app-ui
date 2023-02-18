@@ -1,16 +1,7 @@
-import {
-  Box,
-  createStyles,
-  Grid,
-  Group,
-  Image,
-  Table,
-  Text,
-  Title,
-} from "@mantine/core";
+import { Box, createStyles, Grid, Image, Title } from "@mantine/core";
 import { useMatch } from "@tanstack/react-location";
 import React from "react";
-import { Statbox } from "../../../components/atoms/Statbox";
+
 import { StatTable } from "../../../components/organisms/StatTable";
 import { View } from "../../../components/organisms/View";
 
@@ -36,120 +27,26 @@ const useStyles = createStyles((theme) => ({
 export const CharacterDetail = () => {
   const params = useMatch().params;
   const { classes } = useStyles();
-
-  const { stats, contacts, equipiment, notes } =
-    dummyCharacters[Number(params.id)];
+  const { stats, imageURL } = dummyCharacters[Number(params.id)];
 
   return (
     <View>
-      {/* CHARACTER HEADING SECTION */}
       <Title className={classes.titleMargin}>
         {dummyCharacters[Number(params.id)].name}
       </Title>
-      <Grid>
-        <Grid.Col xs={12} sm={4}>
-          <Image
-            className={classes.characterImage}
-            src={dummyCharacters[Number(params.id)].imageURL}
-          />
-        </Grid.Col>
-        <Grid.Col xs={12} sm={8}>
-          <Text className={classes.descriptionText}>
-            {dummyCharacters[Number(params.id)].description}
-          </Text>
-        </Grid.Col>
-      </Grid>
 
-      {/* CHARACTER STATS SECTION */}
-      <Title className={classes.titleMargin} order={2}>
-        Character Stats
-      </Title>
-      <Grid>
-        {/* TOP LEVEL STATS */}
+      <Image src={imageURL} alt="Character Portrait" height={400} />
 
+      <Grid>
         {Object.entries(stats).map(([category, items]) => (
-          <Grid.Col xs={12} sm={4}>
-            <Box>{category}</Box>
+          <Grid.Col
+            xs={12}
+            sm={category === "conditions" ? 12 : 4}
+            key={category}
+          >
+            <StatTable title={category} stats={items} showNumbers={false} />
           </Grid.Col>
         ))}
-
-        <Grid.Col xs={12} sm={4}>
-          <StatTable title={"Mental"} stats={stats.mental} />
-        </Grid.Col>
-        <Grid.Col xs={12} sm={4}>
-          <StatTable title={"Social"} stats={stats.social} />
-        </Grid.Col>
-
-        {/* ABILITIES */}
-        <Grid.Col xs={12} sm={4}>
-          <StatTable title={"Physical Skills"} stats={stats.skillPhy} />
-        </Grid.Col>
-        <Grid.Col xs={12} sm={4}>
-          <StatTable title={"Mental Skills"} stats={stats.skillMen} />
-        </Grid.Col>
-        <Grid.Col xs={12} sm={4}>
-          <StatTable title={"Social Skills"} stats={stats.skillSoc} />
-        </Grid.Col>
-
-        {/* ADDITIONAL */}
-
-        <Grid.Col xs={12} sm={4}>
-          <StatTable title={"Merits"} stats={stats.merits} />
-        </Grid.Col>
-        <Grid.Col xs={12} sm={4}>
-          <StatTable title={"Flaws"} stats={stats.flaws} />
-        </Grid.Col>
-        <Grid.Col xs={12} sm={4}>
-          <StatTable title={"Aspects"} stats={stats.aspects} />
-        </Grid.Col>
-
-        {/* Conditions */}
-        <Grid.Col xs={12} sm={12}>
-          <StatTable title={"Conditions"} stats={stats.conditions} />
-        </Grid.Col>
-
-        {/* Contacts & Equipment - display if either contacts or equipment have members */}
-
-        {(contacts.length > 0 || equipiment.length > 0) && (
-          <>
-            <Grid.Col xs={12} sm={6}>
-              <Title className={classes.titleMargin} order={4}>
-                Equipment
-              </Title>
-              <ul>
-                {contacts.map((item) => (
-                  <li key={item.id}>{item.name}</li>
-                ))}
-              </ul>
-            </Grid.Col>
-            <Grid.Col xs={12} sm={6}>
-              <Title className={classes.titleMargin} order={4}>
-                Contacts
-              </Title>
-              <ul>
-                {contacts.map((contact) => (
-                  <li key={contact.name}>{contact.name}</li>
-                ))}
-              </ul>
-            </Grid.Col>
-          </>
-        )}
-
-        {/* NOTES - display only if at least one note exists */}
-        {notes.length > 0 && (
-          <Grid.Col xs={12} sm={12}>
-            <Title className={classes.titleMargin} order={4}>
-              Notes
-            </Title>
-
-            {notes.map((note) => (
-              <React.Fragment key={note.title}>
-                <Title order={5}>{note.title}</Title>
-                <Text>{note.contents}</Text>
-              </React.Fragment>
-            ))}
-          </Grid.Col>
-        )}
       </Grid>
     </View>
   );
