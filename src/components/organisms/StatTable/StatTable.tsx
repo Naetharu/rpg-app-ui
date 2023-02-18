@@ -6,6 +6,7 @@ const useStyles = createStyles((theme) => ({
   titleMargin: {
     marginTop: 20,
     marginBottom: 10,
+    textTransform: "capitalize",
   },
 
   wideCol: {
@@ -22,6 +23,8 @@ interface StatTableProps {
 export const StatTable = ({ title, stats, showNumbers }: StatTableProps) => {
   const { classes } = useStyles();
 
+  console.log("showNumbers", showNumbers);
+
   return (
     <>
       <Title order={4} className={classes.titleMargin}>
@@ -31,11 +34,13 @@ export const StatTable = ({ title, stats, showNumbers }: StatTableProps) => {
         <tbody>
           {stats.map((stat) => (
             <tr key={stat.name}>
-              <Statbox
-                showNumbers={showNumbers ? showNumbers : true}
-                statName={stat.name}
-                statValue={stat.stat}
-              />
+              <td>
+                <Statbox
+                  showNumbers={showNumbers ? showNumbers : false}
+                  statName={stat.name}
+                  statValue={stat.stat}
+                />
+              </td>
             </tr>
           ))}
         </tbody>
